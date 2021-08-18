@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 1
+    x: 0
     y: 28
     width: 1440
     height: 872
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 55
+  controlID: 58
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 56
+  controlID: 59
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 57
+  controlID: 60
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 506
+    y: 545
     width: 1100
     height: 314
   m_ViewDataDictionary: {fileID: 0}
@@ -324,14 +324,15 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/gearhart/Mini Jam 87 Break
+  m_LastProjectPath: /Users/gearhart/Documents/GitHub/Mini-Jam-87-Break-Repo/Mini
+    Jam 87 Break
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3a560000
-    m_LastClickedID: 22074
-    m_ExpandedIDs: 000000003a56000000ca9a3b
+    m_SelectedIDs: 14420000
+    m_LastClickedID: 16916
+    m_ExpandedIDs: 000000001442000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -359,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 0000000014420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -435,8 +436,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1102
-    y: 19
+    x: 1101
+    y: 58
     width: 338
     height: 801
   m_ViewDataDictionary: {fileID: 0}
@@ -473,7 +474,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 19
+    y: 58
     width: 270
     height: 466
   m_ViewDataDictionary: {fileID: 0}
@@ -482,7 +483,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 30faffff
+      m_ExpandedIDs: 40fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -526,7 +527,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 272
+    x: 271
     y: 58
     width: 828
     height: 466
@@ -575,7 +576,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
