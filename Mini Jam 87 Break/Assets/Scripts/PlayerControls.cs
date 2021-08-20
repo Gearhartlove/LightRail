@@ -7,36 +7,27 @@ public class PlayerControls : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public string direction;
-    public Transform movePoint;
-
 
     public PlayerMovement pMovement;
 
-    private void Start()
-    {
-        movePoint.parent = null;
-        pMovement = new PlayerMovement();
-    }
-
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, movePoint.transform.position) <= 1f)
+        transform.position = Vector3.MoveTowards(transform.position, pMovement.movePoint.position, moveSpeed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, pMovement.movePoint.transform.position) <= 1f)
         {
-            Debug.Log("Assign: " + direction + " " + Time.deltaTime);
             switch (direction)
             {
                 case "North":
-                    movePoint.position += new Vector3(0f, pMovement.GetMovementSquares, 0f);
+                    pMovement.movePoint.position += new Vector3(0f, pMovement.GetMovementSquares, 0f);
                     break;
                 case "South":
-                    movePoint.position += new Vector3(0f, -pMovement.GetMovementSquares, 0f);
+                    pMovement.movePoint.position += new Vector3(0f, -pMovement.GetMovementSquares, 0f);
                     break;
                 case "West":
-                    movePoint.position += new Vector3(-pMovement.GetMovementSquares, 0f, 0f);
+                    pMovement.movePoint.position += new Vector3(-pMovement.GetMovementSquares, 0f, 0f);
                     break;
                 case "East":
-                    movePoint.position += new Vector3(pMovement.GetMovementSquares, 0f, 0f);
+                    pMovement.movePoint.position += new Vector3(pMovement.GetMovementSquares, 0f, 0f);
                     break;
             }
         }
@@ -44,27 +35,43 @@ public class PlayerControls : MonoBehaviour
 
     public void OnNorth()
     {
-        pMovement.SnapNS();
-        direction = "North";
-        movePoint.position += new Vector3(0f, pMovement.GetMovementSquares, 0f);
-    }       
-            
+        if (direction != "North")
+        {
+            pMovement.Snap();
+            direction = "North";
+            pMovement.movePoint.position = transform.position;
+            pMovement.movePoint.position += new Vector3(0f, pMovement.GetMovementSquares, 0f);
+        }
+    }
+
     public void OnSouth()
     {
-        pMovement.SnapNS();
-        direction = "South";
-        movePoint.position += new Vector3(0f, -pMovement.GetMovementSquares, 0f);
+        if (direction != "South")
+        {
+            pMovement.Snap();
+            direction = "South";
+            pMovement.movePoint.position = transform.position;
+            pMovement.movePoint.position += new Vector3(0f, -pMovement.GetMovementSquares, 0f);
+        }
     }
     public void OnWest()
     {
-        pMovement.SnapWE();
-        direction = "West";
-        movePoint.position += new Vector3(-pMovement.GetMovementSquares, 0f, 0f);
+        if (direction != "West")
+        {
+            pMovement.Snap();
+            direction = "West";
+            pMovement.movePoint.position = transform.position;
+            pMovement.movePoint.position += new Vector3(-pMovement.GetMovementSquares, 0f, 0f);
+        }
     }
     public void OnEast()
     {
-        pMovement.SnapWE();
-        direction = "East";
-        movePoint.position += new Vector3(pMovement.GetMovementSquares, 0f, 0f);
+        //if (direction != "East")
+        {
+            pMovement.Snap();
+            direction = "East";
+            pMovement.movePoint.position = transform.position;
+            pMovement.movePoint.position += new Vector3(pMovement.GetMovementSquares, 0f, 0f);
+        }
     }
 }

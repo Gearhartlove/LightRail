@@ -6,8 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     private float movementSquares = 2f;
     public float GetMovementSquares => movementSquares;
+    Vector3 snapVector;
+    public Transform movePoint;
 
-
+    private void Start()
+    {
+        snapVector = new Vector3();
+        movePoint.parent = null;
+    }
     public bool CheckDistance()
     {
         //if (Vector3.Distance(transform.position, movePoint.transform.position)
@@ -22,21 +28,23 @@ public class PlayerMovement : MonoBehaviour
     /// Note: will always be on an integer half the time (moving left/right or)
     ///     north/south
     /// </summary>
-    public void SnapNS()
+    public void Snap()
     {
-        //get X and Y, round up / down depending if above or
-        //  below .5 of the number
-        float position = transform.position.y;
-        
+        snapVector = RoundVector3(transform.position);
+        Debug.Log("Snap: " + snapVector);
+        transform.position = snapVector;
     }
 
-    /// <summary>
-    /// Read SnapNS.
-    /// </summary>
-    public void SnapWE()
+    private Vector3 RoundVector3(Vector3 v3)
     {
-        float position = transform.position.x;
+        Vector3 newVector = new Vector3
+        {
+            x = Mathf.Round(v3.x),
+            y = Mathf.Round(v3.y),
+            z = Mathf.Round(v3.z)
+        };
 
+        return newVector;
     }
 
 
