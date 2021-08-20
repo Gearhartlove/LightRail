@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float movementSquares = 100f;
+    private float movementSquares = 2f;
     public float GetMovementSquares => movementSquares;
 
 
@@ -22,14 +22,21 @@ public class PlayerMovement : MonoBehaviour
     /// Note: will always be on an integer half the time (moving left/right or)
     ///     north/south
     /// </summary>
-    public void Snap()
+    public void SnapNS()
     {
         //get X and Y, round up / down depending if above or
         //  below .5 of the number
-        //float X = transform.position.x;
-        //float Y = transform.position.x;
-
+        float position = transform.position.y;
         
+    }
+
+    /// <summary>
+    /// Read SnapNS.
+    /// </summary>
+    public void SnapWE()
+    {
+        float position = transform.position.x;
+
     }
 
 
