@@ -5,14 +5,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerControls : MonoBehaviour
 {
-    public float moveSpeed = 10f;
+    public float speed = 0f; //look at editor for exact value
     public string direction;
 
     public PlayerMovement pMovement;
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, pMovement.movePoint.position, moveSpeed * Time.deltaTime);
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, pMovement.movePoint.position, speed);
         if (Vector3.Distance(transform.position, pMovement.movePoint.transform.position) <= 1f)
         {
             switch (direction)
