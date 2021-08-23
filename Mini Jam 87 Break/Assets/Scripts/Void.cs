@@ -9,6 +9,7 @@ public class Void : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        Debug.Log("Player Death" + Time.time);
         PlayerDeath = true;
     }
 }

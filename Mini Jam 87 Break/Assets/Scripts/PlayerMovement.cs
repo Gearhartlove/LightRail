@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     public void Snap()
     {
         snapVector = RoundVector3(transform.position);
-        Debug.Log("Snap: " + snapVector);
         transform.position = snapVector;
     }
 
